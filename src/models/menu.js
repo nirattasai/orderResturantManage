@@ -13,7 +13,7 @@ const Menu =()=> {
 
     const fetchUpload = async () => {
         const order = localStorage.getItem('order')
-        db.ref(`/users/${order}/upload/`).on('value', snapshot => {
+        db.ref(`/menu`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
             if (data) {
@@ -27,11 +27,27 @@ const Menu =()=> {
 
     useEffect(() => {
         fetchUpload()
-    }, db.ref(`/users/${localStorage.getItem('order')}/upload/`))
+    }, db.ref(`/menu`))
 
     return (
         <div>
+            <div>
             <TheHeader/>
+            <br></br>
+            <div class="menu-box1">Test Menu Item</div>
+            {menuList.subject_code.map((key, index) => {
+                        return (
+                            <div class='menu-box1'><>
+                                    <li key={index}>{`MenuID : ${key}`} 
+                                    <br></br>
+                                    MenuName : {menuList.data[key].name}
+                                    <br></br>
+                                </li>
+                            <hr></hr></></div>
+                        )
+                    })
+            }
+        </div>
         </div>
     );
 }

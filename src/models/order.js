@@ -6,45 +6,41 @@ import '../css/order.css'
 import TheHeader from '../components/TheHeader'
 
 const Order =()=> {
-    const [menuList,setMenuList] = useState({
-        subject_code: []
+
+    const [orderList, setOrderList] = useState({
+        order: []
     })
-    
-    function pushMenuToOrder(){
-        const menuList = localStorage.getItem('menuList')
-    }
-    
-    const fetchDownload = async () => {
-        db.ref(`/users/${localStorage.menuList}/download/`).on('value', snapshot => {
+
+    const fetchDownloadOrder = async () => {
+        db.ref(`/order`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
             if (data) {
-                setMenuList({
-                    subject_code: Object.keys(data),
+                setOrderList({
+                    order: Object.keys(data),
                     data: data
                 })
             }
         })
     }
 
+
     useEffect(() => {
-        fetchDownload()
-    }, db.ref(`/users/${localStorage.menuList}/download/`))
+        fetchDownloadOrder()
+    }, db.ref(`/order`))
 
     return (
         <div>
             <TheHeader/>
             <br></br>
             <div class="menu-box1">Test Menu Item</div>
-            {menuList.subject_code.map((key, index) => {
+            {orderList.order.map((key, index) => {
                         return (
-                            <div class='menu-box1'><>
-                                    <li key={index}>{`MenuID : ${key}`} 
-                                    <br></br>
-                                    MenuName : {menuList.data[key].name}
-                                    <br></br>
-                                </li>
-                            <hr></hr></></div>
+                            <div class='menu-box1'>
+                                MenuName : {orderList.data[key].menuName}<br/>
+                                MenuID : {orderList.data[key].menuID}<br/>                       
+                                Amount : {orderList.data[key].amount}
+                            </div>
                         )
                     })
                 }

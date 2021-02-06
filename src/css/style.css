@@ -27,7 +27,7 @@ html,body{
 }
 
 .menu-item{
-    color: black;
+    color: lightslategrey;
     padding: 5px;
     margin-right: 5px;
     display: inline-block;

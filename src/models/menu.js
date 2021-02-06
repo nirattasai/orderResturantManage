@@ -8,7 +8,7 @@ import TheHeader from '../components/TheHeader'
 const Menu =()=> {
 
     const [menuList, setMenuList] = useState({
-        subject_code: []
+        menu: []
     })
 
     const fetchUpload = async () => {
@@ -18,7 +18,7 @@ const Menu =()=> {
             console.log(data)
             if (data) {
                 setMenuList({
-                    subject_code: Object.keys(data),
+                    menu: Object.keys(data),
                     data: data
                 })
             }
@@ -37,13 +37,11 @@ const Menu =()=> {
             <div class="menu-box1">Test Menu Item</div>
             {menuList.subject_code.map((key, index) => {
                         return (
-                            <div class='menu-box1'><>
-                                    <li key={index}>{`MenuID : ${key}`} 
-                                    <br></br>
-                                    MenuName : {menuList.data[key].name}
-                                    <br></br>
-                                </li>
-                            <hr></hr></></div>
+                            <div class='menu-box1'>
+                                MenuName : {menuList.data[key].menuName}<br/>
+                                MenuID : {menuList.data[key].menuID}<br/>                       
+                                <input type="text" id="quantity" value="Amount"/>
+                            </div>
                         )
                     })
             }

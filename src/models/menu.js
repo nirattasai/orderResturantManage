@@ -12,7 +12,6 @@ const Menu =()=> {
     })
 
     const fetchUpload = async () => {
-        const order = localStorage.getItem('order')
         db.ref(`/menu`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
@@ -35,7 +34,7 @@ const Menu =()=> {
             <TheHeader/>
             <br></br>
             <div class="menu-box1">Test Menu Item</div>
-            {menuList.subject_code.map((key, index) => {
+            {menuList.menu.map((key, index) => {
                         return (
                             <div class='menu-box1'>
                                 MenuName : {menuList.data[key].menuName}<br/>

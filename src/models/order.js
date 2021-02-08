@@ -11,7 +11,7 @@ const Order =()=> {
         order: []
     })
 
-    const fetchDownloadOrder = async () => {
+    const downloadOrder = async () => {
         db.ref(`/order`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
@@ -26,7 +26,7 @@ const Order =()=> {
 
 
     useEffect(() => {
-        fetchDownloadOrder()
+        downloadOrder()
     }, db.ref(`/order`))
 
     return (

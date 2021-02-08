@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import { db } from "./../firebase"
 import '../css/style.css'
@@ -11,7 +10,7 @@ const Menu =()=> {
         menu: []
     })
 
-    const fetchUpload = async () => {
+    const downloadMenu = async () => {
         db.ref(`/menu`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
@@ -25,8 +24,28 @@ const Menu =()=> {
     }
 
     useEffect(() => {
-        fetchUpload()
+        downloadMenu()
     }, db.ref(`/menu`))
+
+
+    const [orderList, setOrderList] = useState({
+        order: []
+    })
+
+    sendMenuToOrder(() => {
+        for(let i=0;menuList[i];i++){
+            if (menuList.data[i].amount != 0){
+                setOrderList({
+                    order: menuList[i].keys(data),
+                    data: data
+                })
+            }
+        }
+    })
+
+    const uploadMenu = async() => {
+        db.ref(`/order`).set(orderList)
+    }
 
     return (
         <div>
@@ -44,7 +63,7 @@ const Menu =()=> {
                         )
                     })
             }
-        </div>
+            </div>
         </div>
     );
 }

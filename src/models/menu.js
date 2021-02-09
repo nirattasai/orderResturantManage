@@ -32,15 +32,18 @@ const Menu =()=> {
         <div>
             <div>
             <TheHeader/>
-            <br></br>
-            <div class="menu-box1">Test Menu Item</div>
             {menuList.menu.map((key, index) => {
                         return (
-                            <div class='menu-box1'>
-                                MenuName : {menuList.data[key].menuName}<br/>
-                                MenuID : {menuList.data[key].menuID}<br/>                       
-                                <input type="text" id="quantity" value="Amount"/>
+                            <div class='flexbox'>
+                                <div class="item">
+                                    <div class="content">
+                                        <img src={menuList.data[key].image} class="imageSize"></img>
+                                        MenuName : {menuList.data[key].menuName}<br/>
+                                        MenuID : {menuList.data[key].menuID}<br/>                       
+                                    </div>
+                                </div>
                             </div>
+                            
                         )
                     })
             }

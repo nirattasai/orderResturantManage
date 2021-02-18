@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react'
 import { db } from "./../firebase"
 import '../css/style.css'
 import TheHeader from '../components/TheHeader'
+import QuantityChoice from '../components/QuantityChoice'
 
 const Menu =()=> {
 
@@ -32,7 +33,7 @@ const Menu =()=> {
         order: []
     })
 
-    sendMenuToOrder(() => {
+   /* sendMenuToOrder(() => {
         for(let i=0;menuList[i];i++){
             if (menuList.data[i].amount != 0){
                 setOrderList({
@@ -41,7 +42,7 @@ const Menu =()=> {
                 })
             }
         }
-    })
+    })*/ 
 
     const uploadMenu = async() => {
         db.ref(`/order`).set(orderList)
@@ -53,13 +54,16 @@ const Menu =()=> {
             <TheHeader/>
             <br></br>
             <div class="menu-box1">Test Menu Item</div>
+            
             {menuList.menu.map((key, index) => {
                         return (
                             <div class='menu-box1'>
                                 MenuName : {menuList.data[key].menuName}<br/>
                                 MenuID : {menuList.data[key].menuID}<br/>                       
-                                <input type="text" id="quantity" value="Amount"/>
+                                {/* <QuantityChoice menuID={menuList.data[key]} menuName={menuList.data[key].menuName}/> */}
+                                <QuantityChoice/>
                             </div>
+                            
                         )
                     })
             }

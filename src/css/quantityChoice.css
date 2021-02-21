@@ -1,4 +1,5 @@
 .qty .count {
+    cursor: default;
     color: #000;
     display: inline-block;
     vertical-align: top;

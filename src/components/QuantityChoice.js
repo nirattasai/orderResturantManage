@@ -1,39 +1,30 @@
-import { MenuList } from '@chakra-ui/react';
 import React from 'react';
 import '../css/quantityChoice.css'
 
-// function QuantityChoice(menuList){
-    // const{menuID, menuName} = menuList;
+class QuantityChoice extends React.Component {
+    state = { counter: 0 };
 
-    // function plusClicked(valueChange) {
-    //     const{}
-
-    //     return(
-            
-    //     );
-
-    //     console.log(MenuList.data[key].menuID)
-    // }
-
-    // function minusClicked() {
+    getCounter = () => {
         
-    //     ('.count').prop('disabled', true);
-   	// 		(document).on('click','.plus',function(){
-	// 			('.count').val(parseInt(('.count').val()) + 1 );
-    // 		});
-    // }
-function QuantityChoice(){
-    return(
-        
-
+        return(this.state.counter);
+    }
+  
+    plusClicked = () => {
+        if(this.state.counter >= 0 && this.state.counter < 10){this.setState(state => ({ counter: state.counter + 1 }));}
+    };
+  
+    minusClicked = () => {
+        if(this.state.counter > 0){this.setState(state => ({ counter: state.counter - 1 }));}
+    };
+    render() {
+      return (
         <div class="qty mt-5">
-            
-            <span class="minus bg-dark">-</span>
-            <input type="number" class="count" name="qty" value="1" min="1" max="10"/>
-            {/* <span class="plus bg-dark" onClick={() => {plusClicked()}}>+</span> */}
-            <span class="plus bg-dark">+</span>
+            <span class="minus bg-dark" onClick={this.minusClicked}>-</span>
+            <input type="number" class="count" name="qty" value={this.state.counter}/>
+            <span class="plus bg-dark" onClick={this.plusClicked}>+</span>
         </div>
-    );
-}
+      );
+    }
+  }
 
 export default QuantityChoice;

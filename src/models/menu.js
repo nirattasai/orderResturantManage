@@ -28,6 +28,18 @@ const Menu =()=> {
         fetchUpload()
     }, db.ref(`/menu`))
 
+    // function setAmount(iD) {
+    //     {MenuList.menu.map((key, index) => {
+    //         if(menuList.data[key].menuID == iD){
+    //             menuList.data[key].amount = counter;
+    //         } 
+    //     })}
+        
+    // }
+
+    // const counter = QuantityChoice.getCounter()
+    // console.log(getCounter)
+
     return (
         <div>
             <div>
@@ -40,15 +52,14 @@ const Menu =()=> {
                             <div class='menu-box1'>
                                 MenuName : {menuList.data[key].menuName}<br/>
                                 MenuID : {menuList.data[key].menuID}<br/>                       
-                                {/* <QuantityChoice menuID={menuList.data[key]} menuName={menuList.data[key].menuName}/> */}
                                 <QuantityChoice/>
-            
+
                             </div>
                             
                         )
                     })
             }
-        </div>
+            </div>
         </div>
     );
 }

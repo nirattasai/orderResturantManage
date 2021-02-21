@@ -63,15 +63,17 @@ html,body{
     padding: 10px;
   }
 
+.center{
+    text-align: center;
+}
+
 .food-img {
     width: 300px;
     height: 200px;
     align-items: center;
 }
 
-confirm.button1{
-    margin-bottom: 100px;
-    display:inline-block;
+.button1{
     width: 95px;
     height: 35px;
     padding:0.35em 1.2em;
@@ -86,16 +88,17 @@ confirm.button1{
     color:lightslategrey;
     text-align:center;
     transition: all 0.2s;
+    margin: 30px;
 }
-confirm.button1:hover{
+.button1:hover{
     color:#FFFFFF;
     background-color:lightblue;
 }
 @media all and (max-width:30em){
-    confirm.button1{
-    display:block;
-    margin:0.4em auto;
-}
+    .button1{
+        display:block;
+        margin:0.4em auto;
+    }
 }
 
   

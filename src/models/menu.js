@@ -4,7 +4,6 @@ import { db } from "./../firebase"
 import '../css/style.css'
 import TheHeader from '../components/TheHeader'
 import QuantityChoice from '../components/QuantityChoice'
-import ConfirmBtn from '../components/ConfirmBtn'
 
 const Menu =()=> {
 
@@ -30,7 +29,7 @@ const Menu =()=> {
     }, db.ref(`/menu`))
 
     return (
-        <div>
+        <div class = "center">
             <div>
             <TheHeader/>
             <br></br>
@@ -50,7 +49,7 @@ const Menu =()=> {
                         )
                     })
             }
-            <ConfirmBtn/>
+            <button class="button1">Confirm</button>
             </div>
         </div>
     );

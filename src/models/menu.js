@@ -4,6 +4,7 @@ import { db } from "./../firebase"
 import '../css/style.css'
 import TheHeader from '../components/TheHeader'
 import QuantityChoice from '../components/QuantityChoice'
+import ConfirmBtn from '../components/ConfirmBtn'
 
 const Menu =()=> {
 
@@ -28,18 +29,6 @@ const Menu =()=> {
         fetchUpload()
     }, db.ref(`/menu`))
 
-    // function setAmount(iD) {
-    //     {MenuList.menu.map((key, index) => {
-    //         if(menuList.data[key].menuID == iD){
-    //             menuList.data[key].amount = counter;
-    //         } 
-    //     })}
-        
-    // }
-
-    // const counter = QuantityChoice.getCounter()
-    // console.log(getCounter)
-
     return (
         <div>
             <div>
@@ -51,14 +40,17 @@ const Menu =()=> {
                         return (
                             <div class='menu-box1'>
                                 MenuName : {menuList.data[key].menuName}<br/>
-                                MenuID : {menuList.data[key].menuID}<br/>                       
+                                MenuID : {menuList.data[key].menuID}<br/>        
+                                <img class="food-img" src={menuList.data[key].image}/>            
                                 <QuantityChoice/>
+                                
 
                             </div>
                             
                         )
                     })
             }
+            <ConfirmBtn/>
             </div>
         </div>
     );

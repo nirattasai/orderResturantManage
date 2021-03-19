@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
+import $ from "jquery";
 import { db } from "./../firebase"
 import '../css/style.css'
+import '../css/menu.css'
 import TheHeader from '../components/TheHeader'
 import QuantityChoice from '../components/QuantityChoice'
 
@@ -44,6 +46,16 @@ const Menu =()=> {
         }
     })*/ 
 
+    function setOrder(){
+        $('div[class="menu-box1"]').each(function(index, obj){
+            setOrderList({
+                order: menuList[index]
+            })
+        })
+        console.log("Click")
+        console.log(menuList.data[0])
+    }
+
     const uploadMenu = async() => {
         db.ref(`/order`).set(orderList)
     }
@@ -56,18 +68,17 @@ const Menu =()=> {
             <div class="menu-box1">Test Menu Item</div>
             
             {menuList.menu.map((key, index) => {
-                        return (
-                            <div class='menu-box1'>
-                                MenuName : {menuList.data[key].menuName}<br/>
-                                MenuID : {menuList.data[key].menuID}<br/>                       
-                                {/* <QuantityChoice menuID={menuList.data[key]} menuName={menuList.data[key].menuName}/> */}
-                                <QuantityChoice/>
-                            </div>
-                            
+                    return (
+                        <div class='menu-box1'>
+                            MenuName : {menuList.data[key].menuName}<br/>
+                            MenuID : {menuList.data[key].menuID}<br/>                       
+                            <QuantityChoice/>                        
+                        </div>
                         )
                     })
             }
             </div>
+            <button class="button" onClick={setOrder}>OK</button>
         </div>
     );
 }

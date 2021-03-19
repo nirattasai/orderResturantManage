@@ -35,15 +35,16 @@ const Order =()=> {
             <br></br>
             <div class="menu-box1">Test Menu Item</div>
             {orderList.order.map((key, index) => {
-                        return (
-                            <div class='menu-box1'>
-                                MenuName : {orderList.data[key].menuName}<br/>
-                                MenuID : {orderList.data[key].menuID}<br/>                       
-                                Amount : {orderList.data[key].amount}
-                            </div>
-                        )
-                    })
-                }
+                    return (
+                        <div class='menu-box1'>
+                            MenuName : {orderList.data[key].menuName}<br/>
+                            MenuID : {orderList.data[key].menuID}<br/>                       
+                            Amount : {orderList.data[key].amount}
+                        </div>
+                    )
+                })
+            }
+            
         </div>
     );
 }

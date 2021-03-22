@@ -5,7 +5,8 @@ import { db } from "./../firebase"
 import '../css/style.css'
 import '../css/menu.css'
 import '../css/quantityChoice.css'
-import TheHeader from '../components/TheHeader'
+import '../css/menuPage.css'
+import '../css/oderPage.css'
 
 const Menu =()=> {
 
@@ -35,72 +36,74 @@ const Menu =()=> {
         if(menuList.data[key].amount >= 0 && menuList.data[key].amount < 99){
             menuList.data[key].amount +=1
         };
-        console.log('.count#'+key)
-        $('.count#'+key).html(menuList.data[key].amount)
+        $('.quantity_count#'+key).html(menuList.data[key].amount)
     }
     function minusClicked(key){
         if(menuList.data[key].amount > 0){
             menuList.data[key].amount -= 1 
         }
-        $('.count#'+key).html(menuList.data[key].amount)
+        $('.quantity_count#'+key).html(menuList.data[key].amount)
     }
 
     async function setOrder(){
         var menu = []
         var objList = []
-        $.each($('.menu-box1'),function(index, element){
+        $.each($('.detail'),function(index, element){
             var obj = {}
-            menu.push(menuList.data[$(this).find('div').find('.count').attr('id')].menuName)
-            obj.menuName = menuList.data[$(this).find('div').find('.count').attr('id')].menuName
-            obj.menuID = menuList.data[$(this).find('div').find('.count').attr('id')].menuID
-            obj.amount = menuList.data[$(this).find('div').find('.count').attr('id')].amount
-            obj.price = obj.amount*(menuList.data[$(this).find('div').find('.count').attr('id')].unitPrice)
-            objList.push(obj)
+            if(menuList.data[$(this).find('.quantity_count').attr('id')].amount > 0){
+                menu.push(menuList.data[$(this).find('.quantity_count').attr('id')].menuName)
+                obj.menuName = menuList.data[$(this).find('.quantity_count').attr('id')].menuName
+                obj.menuID = menuList.data[$(this).find('.quantity_count').attr('id')].menuID
+                obj.amount = menuList.data[$(this).find('.quantity_count').attr('id')].amount
+                obj.price = obj.amount*(menuList.data[$(this).find('.quantity_count').attr('id')].unitPrice)
+                objList.push(obj)
+            }
         });
-        console.log(orderList)
         orderList = {
             menu: menu,
             data: objList
         }
-        console.log(orderList)
     };
 
     async function uploadOrder(){
         await setOrder()
 
-        await db.ref(`/orderNo`).on('value', snapshot => {
-            const data = snapshot.val()
-            localStorage.setItem('orderNo',data)
-        })
-
         for(var i=0; i<orderList.menu.length; i++){
-            await db.ref(`/order/order_no${localStorage.orderNo}/menu/${orderList.menu[i]}`).set(orderList.data[i])
+            await db.ref(`/order/${orderList.menu[i]}`).set(orderList.data[i])
         }
+        return true;
     }
     return (
-        <div>
-            <div>
-            <TheHeader/>
+        <div class='bgOrder'>
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy"/>
+            <div class = 'title'>
+                <span class='title_text'>Menu List</span>
+                <a class='back_button' href="/order">&#60;</a>
+            </div>    
             <br></br>
+            <div class='wrapper'>
             {menuList.menu.map((key, index) => {
                     return (
-                        <div class='menu-box1' id={menuList.data[key].menuID}>
-                            MenuName : {menuList.data[key].menuName}<br/>
-                            MenuID : {menuList.data[key].menuID}<br/>                       
-                            <div class="qty mt-5">    
-                                <span class="minus bg-dark" onClick={() => minusClicked(key)}>-</span>
-                                <span class="count" name="qty" id={key}>{menuList.data[key].amount}</span>
-                                <span class="plus bg-dark" onClick={() => plusClicked(key)}>+</span>
+                        
+                        <div class='wrapper-detail'>
+                            <div class='pad_image'> 
+                                <img src={menuList.data[key].img} class='food-image'></img>
+                            </div>
+                            <div class='detail'>
+                                <span class='menuList_name'>{menuList.data[key].menuName}</span>
+                                <span class='menuList_price'>{menuList.data[key].unitPrice} B / piece </span>   
+                                <img src="/minus.png" class="minus_button" onClick={() => minusClicked(key)}></img>
+                                <img src="/plus.png" class="plus_button" onClick={() => plusClicked(key)}></img>
+                                <span class="quantity_count" id={key}>{menuList.data[key].amount}</span>
                             </div>
                         </div>
                         )
-                    })
+                }   )
             }
             </div>
-            <a class="button" onClick={uploadOrder}>OK</a>
+            <a class="add_button" href="/order" onClick={uploadOrder}>Add to cart</a>
         </div>
     );
 }
 
 export default Menu;
-

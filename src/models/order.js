@@ -12,11 +12,8 @@ const Order =()=> {
     })
 
     const downloadOrder = async () => {
-        
-        
-        db.ref(`/order/order_no${localStorage.orderNo}/menu`).on('value', snapshot => {
+        db.ref(`/order`).on('value', snapshot => {
             const data = snapshot.val()
-            console.log(data)
             if (data) {
                 setOrderList({
                     order: Object.keys(data),

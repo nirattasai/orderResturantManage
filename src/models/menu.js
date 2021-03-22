@@ -35,6 +35,7 @@ const Menu =()=> {
         if(menuList.data[key].amount >= 0 && menuList.data[key].amount < 99){
             menuList.data[key].amount +=1
         };
+        console.log('.count#'+key)
         $('.count#'+key).html(menuList.data[key].amount)
     }
     function minusClicked(key){
@@ -49,12 +50,14 @@ const Menu =()=> {
         var objList = []
         $.each($('.menu-box1'),function(index, element){
             var obj = {}
-            menu.push($(this).attr('name'))
-            obj.menuName = $(this).attr('name')
-            obj.menuID = $(this).attr('id')
+            menu.push(menuList.data[$(this).find('div').find('.count').attr('id')].menuName)
+            obj.menuName = menuList.data[$(this).find('div').find('.count').attr('id')].menuName
+            obj.menuID = menuList.data[$(this).find('div').find('.count').attr('id')].menuID
             obj.amount = menuList.data[$(this).find('div').find('.count').attr('id')].amount
+            obj.price = obj.amount*(menuList.data[$(this).find('div').find('.count').attr('id')].unitPrice)
             objList.push(obj)
         });
+        console.log(orderList)
         orderList = {
             menu: menu,
             data: objList
@@ -64,21 +67,14 @@ const Menu =()=> {
 
     async function uploadOrder(){
         await setOrder()
-        
-        await db.ref(`/tableNo`).on('value', snapshot => {
-            const data = snapshot.val()
-            localStorage.setItem('tableNo',data)
-        })
 
         await db.ref(`/orderNo`).on('value', snapshot => {
             const data = snapshot.val()
             localStorage.setItem('orderNo',data)
         })
 
-        await db.ref(`/table/table_no${localStorage.tableNo}/status`).set(1)
-
         for(var i=0; i<orderList.menu.length; i++){
-            await db.ref(`/table/table_no${localStorage.tableNo}/allOrder/orderNo${localStorage.orderNo}/${orderList.menu[i]}`).set(orderList.data[i])
+            await db.ref(`/order/order_no${localStorage.orderNo}/menu/${orderList.menu[i]}`).set(orderList.data[i])
         }
     }
     return (
@@ -88,7 +84,7 @@ const Menu =()=> {
             <br></br>
             {menuList.menu.map((key, index) => {
                     return (
-                        <div class='menu-box1' id={menuList.data[key].menuID} name={menuList.data[key].menuName}>
+                        <div class='menu-box1' id={menuList.data[key].menuID}>
                             MenuName : {menuList.data[key].menuName}<br/>
                             MenuID : {menuList.data[key].menuID}<br/>                       
                             <div class="qty mt-5">    
@@ -101,7 +97,7 @@ const Menu =()=> {
                     })
             }
             </div>
-            <a class="button" href="/order" onClick="uploadOrder;return false;">OK</a>
+            <a class="button" onClick={uploadOrder}>OK</a>
         </div>
     );
 }

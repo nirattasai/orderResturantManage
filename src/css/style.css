@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
-html,body{
+/* html,body{
     background-color: lightblue;
     margin: 0;
     padding: 0;
     font-family: 'Courgette', cursive;
-}
+} */
 
 .select-item{
     margin: 10px;
@@ -19,6 +19,7 @@ html,body{
     margin: auto;
     padding: 20px;
     font-size: 20px;
+    text-align: center;
 }
 
 .brand {
@@ -61,3 +62,43 @@ html,body{
     height: 100%;
     padding: 10px;
   }
+
+
+
+.center{
+    text-align: center;
+}
+
+.food-img {
+    width: 300px;
+    height: 200px;
+    align-items: center;
+}
+
+.button1{
+    width: 95px;
+    height: 35px;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    background-color:#FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:10px;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:lightslategrey;
+    text-align:center;
+    transition: all 0.2s;
+    margin: 30px;
+}
+.button1:hover{
+    color:#FFFFFF;
+    background-color:lightblue;
+}
+@media all and (max-width:30em){
+    .button1{
+        display:block;
+        margin:0.4em auto;
+    }
+}

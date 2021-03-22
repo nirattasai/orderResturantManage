@@ -1,0 +1,204 @@
+@import url('//fonts.googleapis.com/css?family=Chewy"');
+.bgOrder{
+    position: fixed;
+    width: 376px;
+    height: 812px;
+    background: url(../image/bgOrder.png);
+}
+
+.title{
+    width: 287px;
+    height: 108px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    top: 0px;
+    background: #e2cfb3;
+    border-radius: 10px 10px 54px 54px;
+}
+
+.title_text{
+    position: fixed;
+    width: 163px;
+    height: 31px;
+    left: 107px;
+    top: 40px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.subtitle{
+    position: fixed;
+    width: 294px;
+    height: 73px;
+    left: 38px;
+    top: 146px;
+
+    background: #e2cfb3;
+    border-radius: 10px;
+}
+
+.subtitle_text{
+    position: fixed;
+    width: 70px;
+    height: 24px;
+    left: 150px;
+    top: 171px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.pad{
+    position: fixed;
+    width: 294px;
+    height: 353px;
+    left: 41px;
+    top: 248px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.orderList{
+    position: fixed;
+    width: 226px;
+    height: 220px;
+    left: 75px;
+    top: 274px;
+
+    background: #e2cfb3;
+    border-radius: 10px;
+}
+
+.menu_name{
+    position: fixed;
+    width: 74px;
+    height: 18px;
+    left: 91px;
+    top: 279px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    text-decoration-line: underline;
+
+    color: #000000;
+}
+
+.quantity{
+    position: fixed;
+    width: 71px;
+    height: 18px;
+    left: 221px;
+    top: 279px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    text-decoration-line: underline;
+
+    color: #000000;
+}
+
+.quantity_tab{
+    position: fixed;
+    width: 10px;
+    height: 21px;
+    left: 252px;
+    top: 312px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    text-align: center;
+    color: #778899;
+}
+
+.menu_name_tab{
+    position: fixed;
+    width: 28px;
+    height: 21px;
+    left: 113px;
+    top: 312px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: #778899;
+}
+
+.confirm_button{
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+
+    position: fixed;
+    width: 61px;
+    height: 29px;
+    left: 157px;
+    top: 543px;
+
+    background: #e2cfb3;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.confirm_button:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.back_button{
+
+    text-decoration: none;
+    position: fixed;
+    width: 16px;
+    height: 30px;
+    left: 68px;
+    top: 39px;
+
+    font-family: Courgette;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #000000;
+}
+.back_button:hover{
+    text-decoration: underline;
+    font-weight:bolder;
+}

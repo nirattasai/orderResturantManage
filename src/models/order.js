@@ -3,6 +3,7 @@ import { useState, useEffect} from 'react'
 import { db } from "./../firebase"
 import '../css/style.css'
 import '../css/order.css'
+import '../css/oderPage.css'
 import TheHeader from '../components/TheHeader'
 
 const Order =()=> {
@@ -11,7 +12,7 @@ const Order =()=> {
         order: []
     })
 
-    const fetchDownloadOrder = async () => {
+    const downloadOrder = async () => {
         db.ref(`/order`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
@@ -26,26 +27,40 @@ const Order =()=> {
 
 
     useEffect(() => {
-        fetchDownloadOrder()
+        downloadOrder()
     }, db.ref(`/order`))
 
     return (
-        <div>
-            <TheHeader/>
-            <br></br>
-            <div class="menu-box1">Test Menu Item</div>
-            {orderList.order.map((key, index) => {
-                        return (
-                            <div class='menu-box1'>
-                                MenuName : {orderList.data[key].menuName}<br/>
-                                MenuID : {orderList.data[key].menuID}<br/>                       
-                                Amount : {orderList.data[key].amount}
-                            </div>
-                        )
-                    })
-                }
-        </div>
-    );
-}
+            <div class='bgOrder'>
+                <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy" />
+            
+                <div class = 'title'>
+                    <span class='title_text'>Cart</span>
+                    <a class='back_button' href="/menu">&#60;</a>
+                </div>
+                <div class='subtitle'></div>
+                <span class='subtitle_text'>Oder List</span>
+                <br></br>
+                <div class='pad'>
+                    <div class='orderList'>
+                        <span class='menu_name'>Menu Name</span>
+                        <span class='quantity'>Quantity</span>
+                        <br></br>
+                        {orderList.order.map((key, index) => {
+                                return (
+                                    <div>
+                                        <span class='menu_name_tab'>{orderList.data[key].menuName}</span>
+                                        <span class='quantity_tab'>{orderList.data[key].amount}</span>
+                                        <br/>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    <a class='confirm_button' href="/menu">Confirm</a>
+                </div>
+            </div>
+            );
+    }
 
 export default Order;

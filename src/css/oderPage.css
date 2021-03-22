@@ -121,6 +121,14 @@
     color: #000000;
 }
 
+.wrapper_order{
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 381px;
+    height: 520px;
+}
+
 .quantity_tab{
     position: fixed;
     width: 10px;

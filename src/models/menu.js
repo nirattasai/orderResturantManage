@@ -87,7 +87,7 @@ const Menu =()=> {
                 {/* <TheHeader/> */}
             </div>    
             <br></br>
-            <div class='wrapper'>
+            <div class='wrapper_menu'>
             {menuList.menu.map((key, index) => {
                     return (
                         

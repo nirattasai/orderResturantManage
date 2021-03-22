@@ -13,7 +13,7 @@ const Order =()=> {
     })
 
     const downloadOrder = async () => {
-        db.ref(`/table/table_no${localStorage.tableNo}/allOrder/orderNo${localStorage.orderNo}`).on('value', snapshot => {
+        db.ref(`/order/order_no${localStorage.orderNo}`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
             if (data) {
@@ -29,7 +29,7 @@ const Order =()=> {
     useEffect(() => {
         downloadOrder()
         console.log(orderList)
-    }, db.ref(`/order`))
+    }, db.ref(`/order/order_no${localStorage.orderNo}`))
 
     return (
             <div class='bgOrder'>

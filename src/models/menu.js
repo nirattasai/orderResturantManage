@@ -62,35 +62,14 @@ const Menu =()=> {
     }
 
     return (
-<<<<<<< HEAD
-        <div class = "center">
-=======
         <div class='bgOrder'>
             <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy" />
->>>>>>> order
             <div>
             {/* <TheHeader/> */}
             <br></br>
             <div class="menu-box1">Test Menu Item</div>
             
             {menuList.menu.map((key, index) => {
-<<<<<<< HEAD
-                        return (
-                            <div class='menu-box1'>
-                                MenuName : {menuList.data[key].menuName}<br/>
-                                MenuID : {menuList.data[key].menuID}<br/>        
-                                <img class="food-img" src={menuList.data[key].image}/>            
-                                <QuantityChoice/>
-                                
-
-                            </div>
-                            
-                        )
-                    })
-            }
-            <button class="button1">Confirm</button>
-            </div>
-=======
                     return (
                         <div class='menu-box1'>
                             MenuName : {menuList.data[key].menuName}<br/>
@@ -102,7 +81,6 @@ const Menu =()=> {
             }
             </div>
             <a class="button" onClick={setOrder} href='/order'>OK</a>
->>>>>>> order
         </div>
     );
 }

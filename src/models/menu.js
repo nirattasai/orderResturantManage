@@ -4,6 +4,7 @@ import $ from "jquery";
 import { db } from "./../firebase"
 import '../css/style.css'
 import '../css/menu.css'
+import '../css/oderPage.css'
 import TheHeader from '../components/TheHeader'
 import QuantityChoice from '../components/QuantityChoice'
 
@@ -61,9 +62,10 @@ const Menu =()=> {
     }
 
     return (
-        <div>
+        <div class='bgOrder'>
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy" />
             <div>
-            <TheHeader/>
+            {/* <TheHeader/> */}
             <br></br>
             <div class="menu-box1">Test Menu Item</div>
             
@@ -78,7 +80,7 @@ const Menu =()=> {
                     })
             }
             </div>
-            <button class="button" onClick={setOrder}>OK</button>
+            <a class="button" onClick={setOrder} href='/order'>OK</a>
         </div>
     );
 }

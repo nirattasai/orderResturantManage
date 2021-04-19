@@ -1,0 +1,127 @@
+.bgOrder{
+    position: fixed;
+    width: 376px;
+    height: 812px;
+    background: url(../image/bgOrder.png);
+    overflow-y: scroll;
+}
+
+.center-box-container{
+    background-color: lightyellow;
+    position: relative;
+    width: 333px;
+    height: 350px;
+    padding: 20px;
+    padding-top: 25px;
+    margin: 20px;
+    border-radius: 10px;
+    margin-top: 100px;
+    font-size: larger;
+}
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  position: relative;
+  margin: 0px;
+}
+
+.slides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot-area{
+    text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  position: center;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.news-img {
+    position: relative;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 298px;
+    height: 170px;
+  }
+
+.bottom-box{
+  background-color: white;
+  width: auto;
+  height: 400px;
+  margin-top: 50px;
+  overflow-y: scroll;
+}

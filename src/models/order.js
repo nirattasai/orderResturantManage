@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react'
 import { db } from "./../firebase"
 import '../css/style.css'
 import '../css/order.css'
-import '../css/oderPage.css'
+import '../css/orderPage.css'
 
 const Order =()=> {
 
@@ -55,7 +55,9 @@ const Order =()=> {
                             })
                         }
                     </div>
-                    <a class='confirm_button' href="/menu">Confirm</a>
+                    <div class='confirm_button' >
+                        <a href="/receipt">Confirm</a>
+                    </div>
                 </div>
             </div>
             );

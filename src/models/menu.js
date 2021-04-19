@@ -6,7 +6,7 @@ import '../css/style.css'
 import '../css/menu.css'
 import '../css/quantityChoice.css'
 import '../css/menuPage.css'
-import '../css/oderPage.css'
+import '../css/orderPage.css'
 
 const Menu =()=> {
 
@@ -66,22 +66,24 @@ const Menu =()=> {
     };
 
     async function uploadOrder(){
-        await setOrder()
+        if (window.confirm('Are you sure?')){
+            await setOrder()
 
         for(var i=0; i<orderList.menu.length; i++){
             await db.ref(`/order/${orderList.menu[i]}`).set(orderList.data[i])
         }
-        return true;
+        window.location.href = "/order"
+        }
     }
     return (
         <div class='bgOrder'>
             <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy"/>
             <div class = 'title'>
                 <span class='title_text'>Menu List</span>
-                <a class='back_button' href="/order">&#60;</a>
+                <a class='back_button' href="/">&#60;</a>
             </div>    
             <br></br>
-            <div class='wrapper'>
+            <div class='wrapper_menu'>
             {menuList.menu.map((key, index) => {
                     return (
                         
@@ -101,7 +103,7 @@ const Menu =()=> {
                 }   )
             }
             </div>
-            <a class="add_button" href="/order" onClick={uploadOrder}>Add to cart</a>
+            <a class="add_button" onClick={uploadOrder}>Add to cart</a>
         </div>
     );
 }

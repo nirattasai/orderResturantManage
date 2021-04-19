@@ -5,7 +5,7 @@
     width: 143px;
     height: 81px;
     background: #E4E4E4;
-    right: 35px;
+    left: 35px;
     border-radius: 10px;
 }
 .food-image{
@@ -15,7 +15,7 @@
     margin-left: 10px;
     margin-top: 5px;
 }
-.wrapper {
+.wrapper_menu {
     position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -31,11 +31,11 @@
     height: 100px;
 }
 .detail{
-    position: relative;
+    position: absolute;
     width: 159px;
     height: 81px;
     background: #e2cfb3;
-    left: 35px;
+    right: 35px;
     border-radius: 10px;
 }
 

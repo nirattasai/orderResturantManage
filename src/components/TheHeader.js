@@ -1,17 +1,14 @@
 import React from 'react';
 import '../css/style.css'
+import userLogo from '../image/user.png'
 
 function TheHeader(){
     return(
         <div>
-            <header className="TheHeader">
-                <div>
-                    <a class="menu-item brand" href="/home">Home</a>
-                    <a class="menu-item" href="/selectTable">SelectTable</a>
-                    <a class="menu-item" href="/menu">Menu</a>
-                    <a class="menu-item" href="/order">Order</a>
-                </div>
-            </header>
+            <div class='header'>
+                <img src={userLogo} class='logo'/>
+                
+            </div>
         </div>
     );
 }

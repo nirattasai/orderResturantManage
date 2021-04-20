@@ -85,7 +85,9 @@ const Menu =()=> {
             <div class = 'title'>
                 <span class='title_text'>Menu List</span>
                 <a class='back_button' href="/booked">&#60;</a>
-                <img src="/cart.png" class='cart'></img> 
+                <a href='/order'>
+                    <img src="/cart.png" class='cart'></img> 
+                </a>
                 {/* <TheHeader/> */}
             </div>    
             <br></br>

@@ -19,9 +19,9 @@
 
 .title_text{
     position: fixed;
-    width: 163px;
+    width: 300px;
     height: 31px;
-    left: 107px;
+    right: 40px;
     top: 40px;
 
     font-family: Chewy;
@@ -165,18 +165,22 @@
 }
 
 .confirm_button{
+    position: relative;
     font-family: Chewy;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 18px;
     text-align: center;
+    color: #000000;
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
 
-    position: fixed;
     width: 61px;
     height: 29px;
-    left: 157px;
-    top: 543px;
+    left: 114px;
+    top: 300px;
 
     background: #e2cfb3;
     border-radius: 5px;

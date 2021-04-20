@@ -7,6 +7,7 @@ import '../css/menu.css'
 import '../css/quantityChoice.css'
 import '../css/menuPage.css'
 import '../css/oderPage.css'
+import Order from './order';
 
 const Menu =()=> {
 
@@ -83,7 +84,8 @@ const Menu =()=> {
             <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy"/>
             <div class = 'title'>
                 <span class='title_text'>Menu List</span>
-                <a class='back_button' href="/order">&#60;</a>
+                <a class='back_button' href="/booked">&#60;</a>
+                <img src="/cart.png" class='cart'></img> 
                 {/* <TheHeader/> */}
             </div>    
             <br></br>

@@ -58,7 +58,7 @@ const Order =()=> {
                             })
                         }
                     </div>
-                    <a class='confirm_button' href="/menu">Confirm</a>
+                    <a class='confirm_button' href="/payment">Confirm</a>
                 </div>
             </div>
             );

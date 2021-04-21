@@ -1,13 +1,12 @@
 import React from 'react';
 import '../css/style.css'
-import userLogo from '../image/user.png'
 import '../css/login.css'
 
 function TheHeader(){
     return(
         <div>
             <div class='header'>
-                <img src={userLogo} class='logo' onClick={() => document.getElementById('login').style.display = "block"}/>
+                <img class='logo' onClick={() => document.getElementById('login').style.display = "block"}/>
                 <div id="login" class="modal">
                     <form class="modal-content animate" action="/action_page.php" method="post">
                         <div class="imgcontainer">

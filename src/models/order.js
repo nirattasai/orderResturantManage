@@ -13,7 +13,7 @@ const Order =()=> {
     })
 
     const downloadOrder = async () => {
-        db.ref(`/order/order_no${localStorage.orderNo}`).on('value', snapshot => {
+        db.ref(`/order`).on('value', snapshot => {
             const data = snapshot.val()
             console.log(data)
             if (data) {
@@ -29,7 +29,7 @@ const Order =()=> {
     useEffect(() => {
         downloadOrder()
         console.log(orderList)
-    }, db.ref(`/order/order_no${localStorage.orderNo}`))
+    }, db.ref(`/order`))
 
     return (
             <div class='bgOrder'>
@@ -47,16 +47,20 @@ const Order =()=> {
                         <span class='menu_name'>Menu Name</span>
                         <span class='quantity'>Quantity</span>
                         <br></br>
-                        {orderList.order.map((key, index) => {
-                                return (
-                                    <div>
-                                        <span class='menu_name_tab'>{orderList.data[key].menuName}</span>
-                                        <span class='quantity_tab'>{orderList.data[key].amount}</span>
-                                        <br/>
-                                    </div>
-                                )
-                            })
-                        }
+                        <div class='wrapper_order'>
+                            {orderList.order.map((key, index) => {
+                                    return (
+                                        <div class='wrapper_box'>
+                                            <div class='order'>
+                                                <span class='menu_name_tab'>{orderList.data[key].menuName}</span>
+                                                <span class='quantity_tab'>{orderList.data[key].amount}</span>
+                                            </div>
+                                            <br></br>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                     <a class='confirm_button' href="/payment">Confirm</a>
                 </div>

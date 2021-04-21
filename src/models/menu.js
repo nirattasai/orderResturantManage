@@ -37,13 +37,13 @@ const Menu =()=> {
         if(menuList.data[key].amount >= 0 && menuList.data[key].amount < 99){
             menuList.data[key].amount +=1
         };
-        $('.count#'+key).html(menuList.data[key].amount)
+        $('.quantity_count#'+key).html(menuList.data[key].amount)
     }
     function minusClicked(key){
         if(menuList.data[key].amount > 0){
             menuList.data[key].amount -= 1 
         }
-        $('.count#'+key).html(menuList.data[key].amount)
+        $('.quantity_count#'+key).html(menuList.data[key].amount)
     }
 
     async function setOrder(){

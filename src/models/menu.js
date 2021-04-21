@@ -7,6 +7,8 @@ import '../css/menu.css'
 import '../css/quantityChoice.css'
 import '../css/menuPage.css'
 import '../css/orderPage.css'
+import Order from './order';
+
 
 const Menu =()=> {
 

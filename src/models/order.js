@@ -55,9 +55,7 @@ const Order =()=> {
                             })
                         }
                     </div>
-                    <div class='confirm_button' >
-                        <a href="/receipt">Confirm</a>
-                    </div>
+                    <a class='confirm_button' href="/payment">Confirm</a>
                 </div>
             </div>
             );

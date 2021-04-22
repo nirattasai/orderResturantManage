@@ -1,0 +1,205 @@
+@import url('//fonts.googleapis.com/css?family=Chewy"');
+
+.bgHome{
+  position: fixed;
+  width: 376px;
+  height: 812px;
+  opacity: 70%;
+  background: url(../image/home.png);
+}
+
+.appName_text{
+  position: fixed;
+  width: 288px;
+  height: 71px;
+  top: 300px;
+  left: 40px;
+
+  font-family: Chewy;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 47px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.booking{
+  position: fixed;
+
+  font-family: Chewy;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+  color: #000000;
+
+  top: 400px;
+  left: 58px;
+  padding: 15px;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+
+  background: #FFFFFF;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.booking:hover{
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.booked{
+  position: fixed;
+
+  font-family: Chewy;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+  color: #000000;
+
+  top: 400px;
+  left: 207px;
+  padding: 15px;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+
+  background: #FFFFFF;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.booked:hover{
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.center-box-container{
+    background-color: lightyellow;
+    position: relative;
+    width: 333px;
+    height: 400px;
+    padding: 20px;
+    padding-top: 25px;
+    margin: 20px;
+    border-radius: 10px;
+    margin-top: 100px;
+    font-size: larger;
+}
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  position: relative;
+  margin: 0px;
+}
+
+.slides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot-area{
+    text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  position: center;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.news-img {
+    position: relative;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 298px;
+    height: 170px;
+  }
+
+  button {
+    background-color: lightskyblue;
+    color: white;
+    padding: 1px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }

@@ -1,0 +1,144 @@
+@import url('//fonts.googleapis.com/css?family=Chewy"');
+
+.pad_image{
+    position: absolute;
+    width: 143px;
+    height: 81px;
+    background: #E4E4E4;
+    left: 35px;
+    border-radius: 10px;
+}
+.food-image{
+    position: absolute;
+    width: 120px;
+    height: 72px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.wrapper_menu {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 381px;
+    height: 520px;
+}
+
+.wrapper-detail{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 381px;
+    height: 100px;
+}
+.detail{
+    position: absolute;
+    width: 159px;
+    height: 81px;
+    background: #e2cfb3;
+    right: 35px;
+    border-radius: 10px;
+}
+
+.add_button{
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000000;
+
+    position: absolute;
+    width :91px;
+    height: 26px;
+
+    margin-left: 150px;
+    margin-top: 30px;
+    background: #e2cfb3;
+    border-radius: 5px;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+.add_button:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.menuList_name{
+    position: absolute;
+    width: 100px;
+    height: 21px;
+    left: 8px;
+    top: 5px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    text-align: left;
+
+    color: #000000;
+}
+
+.menuList_price{
+    position: absolute;
+    width: 91px;
+    height: 21px;
+    bottom: 8px;
+    left: 8px;
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    text-align: left;
+
+    color: #000000;
+}
+
+.plus_button{
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    right: 13px;
+    top: 5px;
+    font-size: 20pt;
+}
+
+.minus_button{
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    bottom: 5px;
+    right: 13px;
+}
+
+.quantity_count{
+    position: absolute;
+    width: 10px;
+    height: 21px;
+    right: 19px;
+    top: 31px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: #000000; 
+}
+
+.cart{
+    position: relative;
+    width: 27px;
+    height: 27px;
+    left: 240px;
+    top: 40px;
+}

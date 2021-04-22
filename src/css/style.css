@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+/* html,body{
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courgette', cursive;
+} */
+
+.select-item{
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    font-family: 'Courgette', cursive;
+}
+
+.header{
+    background: white;
+    margin: auto;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.menu-item{
+    color: lightslategrey;
+    padding: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    box-sizing: border-box;
+    margin: 0px -9.5px;
+  }
+  
+  .item {
+    display: block;
+    box-sizing: border-box;
+    width: 33.33%;
+    margin-bottom: 31px;
+    padding: 0px 9.5px;
+  }
+  
+  .content {
+    color: #242424;
+    background-color: #4ea2f5;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+  }
+
+
+
+.center{
+    text-align: center;
+}
+
+.food-img {
+    width: 300px;
+    height: 200px;
+    align-items: center;
+}
+
+.button1{
+    width: 95px;
+    height: 35px;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    background-color:#FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:10px;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:lightslategrey;
+    text-align:center;
+    transition: all 0.2s;
+    margin: 30px;
+}
+.button1:hover{
+    color:#FFFFFF;
+    background-color:lightblue;
+}
+@media all and (max-width:30em){
+    .button1{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+.logo{
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.bottom-box{
+    background-color: white;
+    width: auto;
+    height: 250px;
+    margin-top: 100px;
+    overflow-y: scroll;
+  }
+
+  .bottom-text{
+      color: lightsteelblue;
+      margin-top: 20px;
+      margin: 20px;
+  }

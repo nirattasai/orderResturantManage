@@ -1,25 +1,23 @@
 import React from 'react'
-import { useState } from "react"
+import Header from '../components/header'
+import Footer from '../components/footer'
+import { db } from "./../firebase"
+import { useState,useEffect } from 'react'
+import $ from "jquery";
+import '../css/style.css'
+import '../css/order.css'
+import '../css/orderPage.css'
+import '../css/paymentPage.css'
+import '../css/bookedPage.css'
+import '../css/homePage.css'
 
 const Home =()=> {
-    function login () {
-        console.log(tableNumber)
-    }
-    const [tableNumber,setTableNumber] = useState()
-    function setTable(){
-        setTableNumber(document.getElementById("table").value)
-    }
+
     return (
-        <div>
-            <h1>หมายเลขโต๊ะ</h1>
-            <select name="table" id="table" onChange={setTable}>
-                <option value="none">Please select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            <button type="submit" onClick={login}>ยืนยัน</button>
+        <div class='bgHome'>
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy" />
+            <a className='booking' href='/booking'>Booking</a>
+            <a className='booked' href='/booked'>Booked</a>
         </div>
     );
 }

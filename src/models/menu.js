@@ -7,7 +7,6 @@ import '../css/menu.css'
 import '../css/quantityChoice.css'
 import '../css/menuPage.css'
 import '../css/orderPage.css'
-import Order from './order';
 
 
 const Menu =()=> {
@@ -27,8 +26,10 @@ const Menu =()=> {
                     menu: Object.keys(data),
                     data: data
                 })
+                console.log(data)
             }
         })
+        
     }
     useEffect(() => {
         downloadMenu()
@@ -90,6 +91,7 @@ const Menu =()=> {
                     return (
                         
                         <div class='wrapper-detail'>
+                            
                             <div class='pad_image'> 
                                 <img src={menuList.data[key].img} class='food-image'></img>
                             </div>

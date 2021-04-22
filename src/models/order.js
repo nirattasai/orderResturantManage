@@ -19,10 +19,29 @@ const Order =()=> {
                     order: Object.keys(data),
                     data: data
                 })
+                calPrice(data)
             }
         })
     }
 
+    function calPrice(data){
+        console.log(data)
+        let price = 0
+        for (let x in data){
+            console.log (data[x].price)
+            price += data[x].price
+        }
+        // for(let i=0; i<data.length; i++){
+        //     console.log(data)
+        // }
+        db.ref(`/price`).set(price)
+    }
+
+    async function backToMenu(){
+        db.ref('/order').set('')
+        db.ref('/price').set(0)
+        window.location.href = '/menu'
+    }
 
     useEffect(() => {
         downloadOrder()
@@ -34,7 +53,7 @@ const Order =()=> {
             
                 <div class = 'title'>
                     <span class='title_text'>Cart</span>
-                    <a class='back_button' href="/menu">&#60;</a>
+                    <a class='back_button' onClick={()=>backToMenu()}>&#60;</a>
                 </div>
                 <div class='subtitle'></div>
                 <span class='subtitle_text'>Oder List</span>
@@ -44,16 +63,20 @@ const Order =()=> {
                         <span class='menu_name'>Menu Name</span>
                         <span class='quantity'>Quantity</span>
                         <br></br>
-                        {orderList.order.map((key, index) => {
-                                return (
-                                    <div>
-                                        <span class='menu_name_tab'>{orderList.data[key].menuName}</span>
-                                        <span class='quantity_tab'>{orderList.data[key].amount}</span>
-                                        <br/>
-                                    </div>
-                                )
-                            })
-                        }
+                        <div class='wrapper_order'>
+                            {orderList.order.map((key, index) => {
+                                    return (
+                                        <div class='wrapper_box'>
+                                            <div class='order'>
+                                                <span class='menu_name_tab'>{orderList.data[key].menuName}</span>
+                                                <span class='quantity_tab'>{orderList.data[key].amount}</span>
+                                            </div>
+                                            <br></br>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                     <a class='confirm_button' href="/payment">Confirm</a>
                 </div>

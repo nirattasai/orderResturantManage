@@ -15,6 +15,7 @@ const Home =()=> {
 
     return (
         <div class='bgHome'>
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy" />
             <a className='booking' href='/booking'>Booking</a>
             <a className='booked' href='/booked'>Booked</a>
         </div>

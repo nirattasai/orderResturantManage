@@ -1,0 +1,195 @@
+@import url('//fonts.googleapis.com/css?family=Chewy"');
+.bgOrder{
+    position: fixed;
+    width: 376px;
+    height: 812px;
+    background: url(../image/bgOrder.png);
+}
+
+.subtitle_text_status{
+    position: fixed;
+    width: 190px;
+    height: 60px;
+    left: 95px;
+    top: 410px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.qr_code{
+    position: fixed;
+    width: 268px;
+    height: 350px;
+    left: 54px;
+    top: 263px;
+}
+
+.total_pad{
+    position: fixed;
+    width: 230px;
+    height: 54px;
+    left: 72px;
+    top: 630px;
+
+    background: #F0E6D7;
+    border-radius: 10px;    
+}
+.total_text{
+    position: relative;
+    height: 10px;
+    top: 15px;
+    left: 20px;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    text-align: left;
+
+    color: #000000;
+}
+
+.baht_text{
+    position: relative;
+    height: 10px;
+    top: 15px;
+    left: 145px;
+    text-align: right;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    color: #000000;
+}
+
+.amount{
+    position: relative;
+    width: 50px;
+    height: 10px;
+    top: 15px;
+    left: 90px;
+    text-align: right;
+
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+
+    color: #000000; 
+}
+
+.title{
+    width: 300px;
+    height: 108px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    top: 0px;
+    background: #e2cfb3;
+    border-radius: 10px 10px 54px 54px;
+}
+
+.subtitle{
+    position: fixed;
+    width: 294px;
+    height: 300px;
+    left: 42px;
+    top: 35%;
+
+    background: white;
+    border-radius: 10px;
+}
+.test_button{
+    position: relative;
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    width: 61px;
+    height: 29px;
+    left: 140px;
+    top: 500px;
+
+    background: #e2cfb3;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.test_button:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.add_menu_button{
+    position: relative;
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    width: 61px;
+    height: 29px;
+    left: -25px;
+    top: 380px;
+
+    background: #e2cfb3;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.add_menu_button:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.pay_button{
+    position: relative;
+    font-family: Chewy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    width: 61px;
+    height: 29px;
+    left: 0px;
+    top: 380px;
+
+    background: #e2cfb3;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.pay_button:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+}

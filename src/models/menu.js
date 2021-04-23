@@ -71,11 +71,10 @@ const Menu =()=> {
     async function uploadOrder(){
         if (window.confirm('Are you sure?')){
             await setOrder()
-
-        for(var i=0; i<orderList.menu.length; i++){
-            await db.ref(`/order/${orderList.menu[i]}`).set(orderList.data[i])
-        }
-        window.location.href = "/order"
+            for(var i=0; i<orderList.menu.length; i++){
+                await db.ref(`/booking/${localStorage.getItem('currentKey')}/order/${orderList.menu[i]}`).set(orderList.data[i])
+            }
+            window.location.href = "/order"
         }
     }
     return (

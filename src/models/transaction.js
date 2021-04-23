@@ -8,18 +8,18 @@ import '../css/transactionPage.css'
 const Transaction =()=> {
     var tranID 
     var price
-    function reset(){
-        db.ref('/order').set('')
-        db.ref('/price').set(0)
-    }
-    function pushTranID(){
-        db.ref('/tranID').set(tranID+1)
+    var name
+    function pullName(){
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/name`).on('value',snapshot=>{
+            name = snapshot.val()
+            $('#name').html(name)
+        })
     }
     function pullTranID(){
         db.ref('tranID').on('value', snapshot => {
             tranID = snapshot.val()
             var tranStr = String(tranID)
-            for(var i=0; i<8; i++){
+            for(var i=0; i<6; i++){
                 if(tranStr.length < 8){
                     tranStr = '0' + tranStr
                 }
@@ -29,15 +29,17 @@ const Transaction =()=> {
         })
     }
     function pullPrice(){
-        db.ref(`/price`).on('value',snapshot=>{
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/price`).on('value',snapshot=>{
             price = snapshot.val()
             console.log(snapshot.val())
             $('#price').html(price)
         })
     }
-    function complete(){
-        pushTranID()
-        reset()
+
+    function updateAndResetFirebase(){
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/order`).set('')
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/price`).set(0)
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/tranID`).set(tranID+1)
         window.location.href = '/home'
     }
     /*async function tranToStr(){
@@ -66,6 +68,7 @@ const Transaction =()=> {
     }
     
     useEffect(()=>{
+        pullName()
         pullTranID()
         dateTimeNow()
         pullPrice()
@@ -86,7 +89,7 @@ const Transaction =()=> {
                 <div class='pad'>
                     <div class='second_pad'>
                         <span class='name'>Name :</span>
-                        <span class='name_customer'>Mr.Jack Been </span>
+                        <span class='name_customer' id='name'></span>
                         <br></br>
                         <span class='transactionID'>Transaction ID :</span>
                         <span class='transaction_number' id='tranID'></span>
@@ -101,7 +104,7 @@ const Transaction =()=> {
                         <span class='total_amount' id='price'></span>
                         <span class='baht'>  Baht.</span>
                         <br></br>
-                        <img class='complete' src='/complete.png' onClick={()=>complete()}></img>
+                        <img class='complete' src='/complete.png' onClick={()=>updateAndResetFirebase()}></img>
                         <br></br>
                         <span class='complete_transaction'>COMPLETE</span>
                     </div>

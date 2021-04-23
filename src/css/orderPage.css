@@ -47,7 +47,7 @@
 
 .subtitle_text{
     position: fixed;
-    width: 70px;
+    width: 75px;
     height: 24px;
     left: 150px;
     top: 171px;
@@ -193,7 +193,7 @@
     width: 61px;
     height: 29px;
     left: 114px;
-    top: 300px;
+    top: 370px;
 
     background: #e2cfb3;
     border-radius: 5px;

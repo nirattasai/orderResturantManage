@@ -118,3 +118,14 @@
     background: #FFFFFF;
     border-radius: 10px;
 }
+
+.pad-qr{
+    position: fixed;
+    width: 294px;
+    height: 500px;
+    left: 41px;
+    top: 248px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}

@@ -26,7 +26,8 @@ const Booking =()=> {
                 name: $('#bName').val(),
                 phone: $('#bPhone').val(),
                 time: $('#bTime').val(),
-                cusAmount: $('#bCusAmount').val()
+                cusAmount: $('#bCusAmount').val(),
+                price: 0
             })
 
             window.location.href = '/home'

@@ -7,6 +7,7 @@ import Booking from './models/booking'
 import Booked from './models/booked'
 import Payment from './models/payment'
 import Transaction from './models/transaction'
+import Status from './models/status'
 
 function App() {
   // 
@@ -20,6 +21,7 @@ function App() {
           <Route exaxt path="/booked" component={Booked}/>
           <Route exaxt path="/payment" component={Payment}/>
           <Route exaxt path="/transaction" component={Transaction}/>
+          <Route exaxt path='/status' component={Status}/>
         </Switch>   
   );
 }

@@ -3,14 +3,12 @@ import { useState, useEffect} from 'react'
 import { db } from "./../firebase"
 import $ from 'jquery'
 import '../css/style.css'
-import '../css/order.css'
-import '../css/orderPage.css'
 import '../css/paymentPage.css'
 
 const Payment =()=> {
     var price
     function pullPrice(){
-        db.ref(`/price`).on('value',snapshot=>{
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/price`).on('value',snapshot=>{
             price = snapshot.val()
             console.log(snapshot.val())
             $('#price').html(price)
@@ -30,8 +28,8 @@ const Payment =()=> {
                 <span class='subtitle_text_payment'>Scan for payment</span>
                 </div>
                 <br></br>
-                <div class='pad'>
-                    <img src="\4088e51e61d83b160b7c0d6aaea1d232.png" class="qr_code"></img>
+                <div class='pad-qr'>
+                    <img src="\qr.jpg" class="qr_code"></img>
                     <br></br>
                     <div class = 'total_pad'>
                         <span class='total_text'>Total</span>

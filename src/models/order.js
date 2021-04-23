@@ -6,46 +6,56 @@ import '../css/order.css'
 import '../css/orderPage.css'
 
 const Order =()=> {
-
+    
     const [orderList, setOrderList] = useState({
         order: []
     })
 
+
     const downloadOrder = async () => {
-        db.ref(`/order`).on('value', snapshot => {
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/order`).on('value', snapshot => {
             const data = snapshot.val()
             if (data) {
                 setOrderList({
                     order: Object.keys(data),
                     data: data
                 })
-                calPrice(data)
             }
         })
     }
 
-    function calPrice(data){
-        console.log(data)
-        let price = 0
-        for (let x in data){
-            console.log (data[x].price)
-            price += data[x].price
+    function calPrice(){
+        var price = 0
+        for (let x in orderList.data){
+            console.log (orderList.data[x].price)
+            price += orderList.data[x].price
+            console.log(price)
         }
         // for(let i=0; i<data.length; i++){
         //     console.log(data)
         // }
-        db.ref(`/price`).set(price)
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/price`).on('value', snapshot => {
+            price += snapshot.val()
+        })
+        console.log(price)
+        return(price)
     }
 
-    async function backToMenu(){
-        db.ref('/order').set('')
-        db.ref('/price').set(0)
+    /*async function backToMenu(){
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/order`).set('')
         window.location.href = '/menu'
+    }*/
+
+    function confirm(){
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/price`).set(calPrice())
+        db.ref(`/booking/${localStorage.getItem('currentKey')}/order`).set('')
+        window.location.href = '/status'
     }
 
     useEffect(() => {
         downloadOrder()
-    }, db.ref(`/order`))
+        calPrice()
+    }, db.ref(`/booking/${localStorage.getItem('currentKey')}/order`))
 
     return (
             <div class='bgOrder'>
@@ -53,10 +63,9 @@ const Order =()=> {
             
                 <div class = 'title'>
                     <span class='title_text'>Cart</span>
-                    <a class='back_button' onClick={()=>backToMenu()}>&#60;</a>
                 </div>
                 <div class='subtitle'></div>
-                <span class='subtitle_text'>Oder List</span>
+                <span class='subtitle_text'>Order List</span>
                 <br></br>
                 <div class='pad'>
                     <div class='orderList'>
@@ -78,7 +87,7 @@ const Order =()=> {
                             }
                         </div>
                     </div>
-                    <a class='confirm_button' href="/payment">Confirm</a>
+                    <a class='confirm_button' onClick={()=>confirm()}>Next</a>
                 </div>
             </div>
             );
